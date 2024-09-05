@@ -19,14 +19,28 @@ let squareHeight = 500 / size;
 
 container.style.maxWidth = `${containerWidth}px`;
 */
-for(i; i < gridSize; i++){
+
+for(i;i <size; i++){
+    let row = document.createElement("div");
+    row.classList.add("row");
+    for(let j = 0;j < size; j++){
+        let newDiv = document.createElement("div");
+        newDiv.classList.add("square");
+        newDiv.style.width = `${squareWidth}px`;
+        newDiv.style.height = `${squareHeight}px`;
+        row.appendChild(newDiv);
+    }
+    container.appendChild(row);
+}
+
+/*for(i; i < gridSize; i++){
        let newDiv = document.createElement("div");
         newDiv.classList.add("square");
         newDiv.style.width = `${squareWidth}px`;
         newDiv.style.height = `${squareHeight}px`;
         container.appendChild(newDiv);
     }
-    
+*/   
     const squares = document.querySelectorAll(".square");
 
         squares.forEach(square =>{
